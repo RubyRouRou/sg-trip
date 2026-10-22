@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<title>新加坡旅費 · AA記帳</title>
+<style>
+  :root{--ink:#1f1c1a;--muted:#6b6560;--line:#ece7e0;--accent:#c0392b;--good:#0f766e;--bg:#faf8f5;--card:#fff}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,"PingFang TC","Noto Sans TC",system-ui,sans-serif;padding-bottom:40px}
+  .wrap{max-width:520px;margin:0 auto;padding:16px}
+  header{background:linear-gradient(135deg,#c0392b,#8e2b22);color:#fff;border-radius:16px;padding:16px 18px;margin-bottom:14px}
+  header h1{margin:0;font-size:19px}
+  header p{margin:4px 0 0;font-size:12.5px;opacity:.95}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px;margin:12px 0}
+  .names{display:flex;gap:8px;align-items:center;margin-bottom:6px}
+  .names input{flex:1;min-width:0;border:1px solid var(--line);border-radius:10px;padding:9px 10px;font-size:15px;background:#fdfcfb}
+  .amt{font-size:30px;font-weight:800;color:var(--accent)}
+  .amt small{font-size:14px;color:var(--muted);font-weight:600}
+  .split{display:flex;gap:8px;margin-top:8px}
+  .split div{flex:1;text-align:center;background:#f7f5f2;border-radius:10px;padding:8px}
+  .split b{display:block;font-size:17px}
+  .split span{font-size:11.5px;color:var(--muted)}
+  label{display:block;font-size:12.5px;color:var(--muted);margin:10px 0 4px;font-weight:600}
+  input,select{width:100%;border:1px solid var(--line);border-radius:10px;padding:11px 12px;font-size:16px;background:#fdfcfb}
+  button{border:0;border-radius:12px;padding:13px;font-size:16px;font-weight:700;cursor:pointer}
+  .primary{width:100%;background:var(--accent);color:#fff;margin-top:14px}
+  .settle{background:#f0fdf9;border:1px solid #cdeee6;border-radius:12px;padding:12px 14px;font-size:14.5px;color:#0f766e;font-weight:600}
+  .settle.zero{background:#f7f5f2;border-color:var(--line);color:var(--muted);font-weight:500}
+  ul{list-style:none;margin:6px 0 0;padding:0}
+  li{display:flex;align-items:center;gap:8px;padding:10px 2px;border-bottom:1px dashed var(--line);font-size:14px}
+  li:last-child{border-bottom:0}
+  li .d{flex:1;min-width:0}
+  li .d small{display:block;color:var(--muted);font-size:11.5px}
+  li .a{font-weight:700;white-space:nowrap}
+  li .x{color:#c0392b;font-size:18px;padding:0 4px;cursor:pointer;opacity:.6}
+  .p0{color:#c0392b}.p1{color:#0f766e}
+  .hint{font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
+  .row{display:flex;gap:8px}
+  .row>div{flex:1}
+  .toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:#221f1c;color:#fff;padding:10px 16px;border-radius:20px;font-size:13.5px;opacity:0;transition:.25s;pointer-events:none}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>新加坡旅費 · AA 記帳 🔔</h1>
+    <p>資料存在本機 · 對半/代購/自付 · 新幣／台幣</p>
+  </header>
+
+  <div class="card">
+    <div class="names">
+      <input id="m0" placeholder="成員一">
+      <span style="color:var(--muted)">×</span>
+      <input id="m1" placeholder="成員二">
+      <button class="primary" style="width:auto;margin:0;padding:10px 14px" onclick="saveNames()">存</button>
+    </div>
+    <div style="text-align:center">
+      <div class="amt"><span id="totalCny">0</span> <small>總支出 S$ 新幣</small></div>
+      <div class="amt" style="margin-top:4px"><span id="totalTwd">0</span> <small>總支出 NT$ 台幣</small></div>
+    </div>
+    <div class="split">
+      <div><b class="p0" id="paid0">¥0</b><span id="n0">成員一 已付</span><small id="paid0t" style="display:block;color:var(--muted);font-size:11.5px;margin-top:1px"></small><small id="due0" style="display:block;color:var(--muted);font-size:11px;margin-top:1px"></small></div>
+      <div><b class="p1" id="paid1">¥0</b><span id="n1">成員二 已付</span><small id="paid1t" style="display:block;color:var(--muted);font-size:11.5px;margin-top:1px"></small><small id="due1" style="display:block;color:var(--muted);font-size:11px;margin-top:1px"></small></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div id="settle" class="settle zero">目前帳務平衡 ✅</div>
+    <div class="hint">原理：「對半平分」兩人各出一半；「代購・為對方付款」＝這筆算對方的，對方欠付款人全額；「自付」＝自己買的自己負擔。最後由付得少的人補差額。</div>
+    <div class="hint">新幣與台幣<b>分開記錄、各自結算</b>，不做匯率換算。</div>
+  </div>
+
+  <div class="card">
+    <label>項目</label>
+    <input id="desc" placeholder="例：麻辣鍋 / 打車 / 足浴 / 菁姐二奢">
+    <div class="row">
+      <div>
+        <label>金額</label>
+        <input id="amount" type="number" inputmode="decimal" placeholder="0">
+      </div>
+      <div>
+        <label>誰付的</label>
+        <select id="payer"></select>
+      </div>
+    </div>
+    <label>計價方式</label>
+    <select id="mode">
+      <option value="half">對半平分（兩人各出一半）</option>
+      <option value="agent">代購・為對方付款（全額算對方的）</option>
+      <option value="self">自付（自己買的，全額自己負擔）</option>
+    </select>
+    <div class="row">
+      <div>
+        <label>幣別</label>
+        <select id="cur">
+          <option value="SGD">新幣 S$</option>
+          <option value="CNY">人民幣 ¥</option>
+          <option value="TWD">台幣 NT$</option>
+        </select>
+      </div>
+      <div>
+        <label>分類</label>
+        <select id="cat">
+          <option>飲食</option>
+          <option>交通</option>
+          <option>購物</option>
+          <option>足浴</option>
+          <option>雜支</option>
+          <option>其他</option>
+        </select>
+      </div>
+    </div>
+    <div class="hint" id="calcHint"></div>
+    <button class="primary" onclick="addExpense()">＋ 記一筆</button>
+    <div class="hint">資料存在這支手機；要給對方看就用「匯出備份」。</div>
+  </div>
+
+  <div class="card">
+    <label style="margin-top:0">離線備份</label>
+    <div class="row">
+      <div><button class="primary" style="margin:0" onclick="exportJson()">⬇ 匯出備份</button></div>
+      <div><button class="primary" style="margin:0;background:#6b6560" onclick="document.getElementById('imp').click()">⬆ 匯入備份</button></div>
+    </div>
+    <input type="file" id="imp" accept="application/json,.json" style="display:none" onchange="importJson(this)">
+    <div class="hint">資料只存在這支手機（瀏覽器內）。換手機或想給對方看，用「匯出備份」存成檔案傳過去，對方再「匯入備份」。</div>
+  </div>
+
+  <div class="card">
+    <label style="margin-top:0">分類小計</label>
+    <ul id="cats"></ul>
+  </div>
+
+  <div class="card">
+    <label style="margin-top:0">消費明細</label>
+    <ul id="list"></ul>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const KEY='sg-aa-v1';
+const SEED={"members": ["柔姐", "Jill"], "expenses": [{"id": "1792078111297934", "desc": "網路卡7天10G", "amount": 259, "payer": 0, "mode": "agent", "cur": "TWD", "cat": "雜支", "ts": "2026-10-15T15:28:31.297Z"}, {"id": "1792078812460698", "desc": "網路卡7天10G", "amount": 209, "payer": 0, "mode": "self", "cur": "TWD", "cat": "其他", "ts": "2026-10-15T15:40:12.460Z"}, {"id": "1792079009313890", "desc": "安達旅險-雅柔", "amount": 491, "payer": 0, "mode": "self", "cur": "TWD", "cat": "其他", "ts": "2026-10-15T15:43:29.313Z"}, {"id": "1792079167816433", "desc": "成都接機", "amount": 377, "payer": 0, "mode": "half", "cur": "TWD", "cat": "雜支", "ts": "2026-10-15T15:46:07.816Z"}, {"id": "1792079329960996", "desc": "機加酒", "amount": 20442, "payer": 0, "mode": "self", "cur": "TWD", "cat": "雜支", "ts": "2026-10-15T15:48:49.961Z"}, {"id": "1792079569584714", "desc": "保險", "amount": 428, "payer": 1, "mode": "self", "cur": "TWD", "cat": "雜支", "ts": "2026-10-15T15:52:49.584Z"}, {"id": "1792584120591270", "desc": "高鐵回程", "amount": 2380, "payer": 0, "mode": "half", "cur": "TWD", "cat": "交通", "ts": "2026-10-21T12:02:00.591Z"}], "rate": 4.4};
+let state;
+try{ const raw=localStorage.getItem(KEY); state = raw?JSON.parse(raw):JSON.parse(JSON.stringify(SEED)); }catch(e){ state=JSON.parse(JSON.stringify(SEED)); }
+state.rate = state.rate>0?state.rate:4.4;
+
+function save(){ try{ localStorage.setItem(KEY,JSON.stringify(state)); }catch(e){} }
+function toast(t){const el=document.getElementById('toast');el.textContent=t;el.classList.add('show');setTimeout(()=>el.classList.remove('show'),1400);}
+function money(n){return (Math.round(n*100)/100).toLocaleString('zh-TW');}
+function sym(c){return c==='TWD' ? 'NT$' : (c==='CNY' ? '¥' : 'S$');}
+function curOf(e){return e.cur==='TWD' ? 'TWD' : (e.cur==='CNY'?'CNY':'SGD');}
+function esc(s){return String(s).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+
+function render(){
+  const [a,b] = state.members;
+  document.getElementById('m0').value=a;
+  document.getElementById('m1').value=b;
+  document.getElementById('n0').textContent=a+' 已付';
+  document.getElementById('n1').textContent=b+' 已付';
+  const sel=document.getElementById('payer');
+  sel.innerHTML = `<option value="0">${a}</option><option value="1">${b}</option>`;
+  const CUR=['SGD','TWD','CNY'];
+  const total={SGD:0,TWD:0,CNY:0}, paid={SGD:[0,0],TWD:[0,0],CNY:[0,0]}, share={SGD:[0,0],TWD:[0,0],CNY:[0,0]}, byCat={};
+  state.expenses.forEach(e=>{
+    const c=curOf(e), amt=Number(e.amount)||0;
+    total[c]+=amt; paid[c][e.payer]+=amt;
+    if(e.mode==='agent'){ share[c][1-e.payer]+=amt; }
+    else if(e.mode==='self'){ share[c][e.payer]+=amt; }
+    else { share[c][0]+=amt/2; share[c][1]+=amt/2; }
+    const k=e.cat||'其他'; (byCat[k]=byCat[k]||{SGD:0,TWD:0,CNY:0})[c]+=amt;
+  });
+  document.getElementById('totalCny').textContent=money(total.SGD);
+  document.getElementById('totalTwd').textContent=money(total.TWD);
+  document.getElementById('paid0').textContent='S$'+money(paid.SGD[0]);
+  document.getElementById('paid1').textContent='S$'+money(paid.SGD[1]);
+  document.getElementById('paid0t').textContent='台幣 NT$'+money(paid.TWD[0]);
+  document.getElementById('paid1t').textContent='台幣 NT$'+money(paid.TWD[1]);
+  document.getElementById('due0').textContent='應付 S$'+money(share.SGD[0])+' ／ NT$'+money(share.TWD[0]);
+  document.getElementById('due1').textContent='應付 S$'+money(share.SGD[1])+' ／ NT$'+money(share.TWD[1]);
+
+  const lines=[];
+  CUR.forEach(c=>{
+    const bal0=paid[c][0]-share[c][0];
+    if(Math.abs(bal0)<0.01) return;
+    if(bal0>0) lines.push(`${b} 應給 ${a}　${sym(c)}${money(Math.abs(bal0))}`);
+    else lines.push(`${a} 應給 ${b}　${sym(c)}${money(Math.abs(paid[c][1]-share[c][1]))}`);
+  });
+  const s=document.getElementById('settle');
+  if(!lines.length){ s.className='settle zero'; s.textContent='目前帳務平衡 ✅'; }
+  else { s.className='settle'; s.innerHTML=lines.join('<br>'); }
+
+  const ul=document.getElementById('list');
+  ul.innerHTML='';
+  if(!state.expenses.length){ ul.innerHTML='<li style="color:var(--muted);justify-content:center">還沒有紀錄</li>'; }
+  state.expenses.slice().reverse().forEach(e=>{
+    const li=document.createElement('li');
+    const tag = e.mode==='agent' ? '代購・算對方' : e.mode==='self' ? '自付' : '對半';
+    li.innerHTML=`<div class="d">${esc(e.desc)}<small>${esc(e.cat||'其他')}・${e.payer===0?a:b}付款・${tag}</small></div>
+      <div class="a">${sym(e.cur)}${money(e.amount)}</div>
+      <div class="x" onclick="del('${e.id}')">×</div>`;
+    ul.appendChild(li);
+  });
+
+  const cu=document.getElementById('cats');
+  const order=['飲食','交通','購物','足浴','雜支','其他'];
+  const entries=Object.entries(byCat).filter(([k,v])=>v.SGD>0||v.TWD>0||v.CNY>0).sort((x,y)=>(order.indexOf(x[0])-order.indexOf(y[0])));
+  cu.innerHTML = entries.length ? entries.map(([k,v])=>{
+    const parts=[]; if(v.SGD>0) parts.push('S$'+money(v.SGD)); if(v.TWD>0) parts.push('NT$'+money(v.TWD)); if(v.CNY>0) parts.push('¥'+money(v.CNY));
+    return `<li><div class="d">${esc(k)}</div><div class="a">${parts.join(' · ')}</div></li>`;
+  }).join('') : '<li style="color:var(--muted);justify-content:center">尚無資料</li>';
+
+  updateCalcHint();
+}
+
+function updateCalcHint(){
+  const el=document.getElementById('calcHint'); if(!el) return;
+  const amount=parseFloat(document.getElementById('amount').value)||0;
+  const payer=parseInt(document.getElementById('payer').value)||0;
+  const mode=document.getElementById('mode').value;
+  const cur=document.getElementById('cur').value;
+  const S=sym(cur);
+  const a=state.members[0], b=state.members[1];
+  const pname=payer===0?a:b, oname=payer===0?b:a;
+  if(!(amount>0)){ el.style.color='var(--muted)'; el.textContent='輸入金額後，這裡會顯示這筆怎麼記。'; return; }
+  el.style.color='var(--good)';
+  if(mode==='agent') el.innerHTML=`將記為：<b>${oname}</b> 的支出 ${S}${money(amount)}（${oname} 欠 ${pname} ${S}${money(amount)}）`;
+  else if(mode==='self') el.innerHTML=`將記為：<b>${pname}</b> 自付 ${S}${money(amount)}（不影響對方）`;
+  else el.innerHTML=`將記為：各 ${S}${money(amount/2)}（${pname} 先墊了 ${oname} 的 ${S}${money(amount/2)}）`;
+}
+['amount','payer','mode','cur'].forEach(id=>{const n=document.getElementById(id); if(n){n.addEventListener('input',updateCalcHint);n.addEventListener('change',updateCalcHint);}});
+
+function addExpense(){
+  const desc=document.getElementById('desc').value.trim()||'未命名';
+  const amount=parseFloat(document.getElementById('amount').value);
+  const payer=parseInt(document.getElementById('payer').value);
+  const mode=document.getElementById('mode').value;
+  const cur=document.getElementById('cur').value;
+  const cat=document.getElementById('cat').value;
+  if(!(amount>0)){ toast('請輸入金額'); return; }
+  state.expenses.push({id:String(Date.now())+Math.floor(Math.random()*1000),desc,amount,payer,mode,cur,cat,ts:new Date().toISOString()});
+  save();
+  document.getElementById('desc').value=''; document.getElementById('amount').value='';
+  render(); toast('已記錄 ✓');
+}
+function del(id){
+  state.expenses=state.expenses.filter(e=>e.id!==id);
+  save(); render(); toast('已刪除');
+}
+function saveNames(){
+  state.members=[document.getElementById('m0').value.trim()||'成員一',document.getElementById('m1').value.trim()||'成員二'];
+  save(); render(); toast('已更新稱呼');
+}
+function exportJson(){
+  const blob=new Blob([JSON.stringify(state,null,2)],{type:'application/json'});
+  const a=document.createElement('a'); a.href=URL.createObjectURL(blob);
+  a.download='chengdu-aa-backup-'+new Date().toISOString().slice(0,10)+'.json'; a.click();
+  toast('已匯出備份');
+}
+function importJson(input){
+  const f=input.files&&input.files[0]; if(!f) return;
+  const r=new FileReader();
+  r.onload=()=>{ try{ const d=JSON.parse(r.result); if(!d.expenses) throw 0;
+      if(confirm('匯入會覆蓋目前資料，確定嗎？')){ state=d; save(); render(); toast('已匯入 '+d.expenses.length+' 筆'); }
+    }catch(e){ toast('檔案格式不對'); } input.value=''; };
+  r.readAsText(f);
+}
+render();
+</script>
+</body>
+</html>
