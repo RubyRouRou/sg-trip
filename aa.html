@@ -62,8 +62,8 @@
       <div class="amt" style="margin-top:4px"><span id="totalTwd">0</span> <small>總支出 NT$ 台幣</small></div>
     </div>
     <div class="split">
-      <div><b class="p0" id="paid0">¥0</b><span id="n0">成員一 已付</span><small id="paid0t" style="display:block;color:var(--muted);font-size:11.5px;margin-top:1px"></small><small id="due0" style="display:block;color:var(--muted);font-size:11px;margin-top:1px"></small></div>
-      <div><b class="p1" id="paid1">¥0</b><span id="n1">成員二 已付</span><small id="paid1t" style="display:block;color:var(--muted);font-size:11.5px;margin-top:1px"></small><small id="due1" style="display:block;color:var(--muted);font-size:11px;margin-top:1px"></small></div>
+      <div><b class="p0" id="paid0">S$0</b><span id="n0">成員一 已付</span><small id="paid0t" style="display:block;color:var(--muted);font-size:11.5px;margin-top:1px"></small><small id="due0" style="display:block;color:var(--muted);font-size:11px;margin-top:1px"></small></div>
+      <div><b class="p1" id="paid1">S$0</b><span id="n1">成員二 已付</span><small id="paid1t" style="display:block;color:var(--muted);font-size:11.5px;margin-top:1px"></small><small id="due1" style="display:block;color:var(--muted);font-size:11px;margin-top:1px"></small></div>
     </div>
   </div>
 
@@ -75,7 +75,7 @@
 
   <div class="card">
     <label>項目</label>
-    <input id="desc" placeholder="例：麻辣鍋 / 打車 / 足浴 / 菁姐二奢">
+    <input id="desc" placeholder="例：海南雞飯 / 地鐵 / 金沙觀景台">
     <div class="row">
       <div>
         <label>金額</label>
@@ -142,7 +142,7 @@
 
 <script>
 const KEY='sg-aa-v1';
-const SEED={"members": ["柔姐", "Jill"], "expenses": [{"id": "1792078111297934", "desc": "網路卡7天10G", "amount": 259, "payer": 0, "mode": "agent", "cur": "TWD", "cat": "雜支", "ts": "2026-10-15T15:28:31.297Z"}, {"id": "1792078812460698", "desc": "網路卡7天10G", "amount": 209, "payer": 0, "mode": "self", "cur": "TWD", "cat": "其他", "ts": "2026-10-15T15:40:12.460Z"}, {"id": "1792079009313890", "desc": "安達旅險-雅柔", "amount": 491, "payer": 0, "mode": "self", "cur": "TWD", "cat": "其他", "ts": "2026-10-15T15:43:29.313Z"}, {"id": "1792079167816433", "desc": "成都接機", "amount": 377, "payer": 0, "mode": "half", "cur": "TWD", "cat": "雜支", "ts": "2026-10-15T15:46:07.816Z"}, {"id": "1792079329960996", "desc": "機加酒", "amount": 20442, "payer": 0, "mode": "self", "cur": "TWD", "cat": "雜支", "ts": "2026-10-15T15:48:49.961Z"}, {"id": "1792079569584714", "desc": "保險", "amount": 428, "payer": 1, "mode": "self", "cur": "TWD", "cat": "雜支", "ts": "2026-10-15T15:52:49.584Z"}, {"id": "1792584120591270", "desc": "高鐵回程", "amount": 2380, "payer": 0, "mode": "half", "cur": "TWD", "cat": "交通", "ts": "2026-10-21T12:02:00.591Z"}], "rate": 4.4};
+const SEED={"members": ["柔姐", "宜靜"], "expenses": [], "rate": 23.5};
 let state;
 try{ const raw=localStorage.getItem(KEY); state = raw?JSON.parse(raw):JSON.parse(JSON.stringify(SEED)); }catch(e){ state=JSON.parse(JSON.stringify(SEED)); }
 state.rate = state.rate>0?state.rate:4.4;
