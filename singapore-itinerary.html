@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>新加坡 5 天 4 晚｜設計靈感行程 1/4–1/8</title>
+<style>
+  :root{--ink:#17211f;--muted:#66756f;--line:#dde8e2;--paper:#f6faf7;--card:#fff;
+    --teal:#0f6b5c;--teal-soft:#e7f3ef;--gold:#b8863b;--coral:#c2553f;--blue:#2f5d8a}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;
+    line-height:1.65;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:920px;margin:0 auto;padding:0 16px 64px}
+  header.hero{background:radial-gradient(900px 320px at 90% -20%,#2aa08a 0%,transparent 60%),
+    linear-gradient(135deg,#0b4f45 0%,#0f6b5c 55%,#17876f 100%);
+    color:#fff;padding:38px 16px 30px;margin-bottom:20px}
+  .hero-inner{max-width:920px;margin:0 auto}
+  .kicker{font-size:13px;letter-spacing:.22em;opacity:.85;margin-bottom:8px}
+  h1{font-size:clamp(27px,5vw,42px);line-height:1.15;margin:0 0 10px;font-weight:800}
+  .sub{font-size:15px;opacity:.92;max-width:680px}
+  .facts{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+  .fact{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);border-radius:999px;padding:7px 13px;font-size:13px}
+  .notice{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:14px;padding:15px 18px;margin:0 0 22px;font-size:14px;color:#3f4a46}
+  .notice code{background:#eef4f1;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  nav.days{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 24px;position:sticky;top:0;z-index:5;
+    background:linear-gradient(var(--paper) 80%,rgba(246,250,247,0));padding:10px 0 12px}
+  nav.days a{font-size:13px;font-weight:700;padding:8px 13px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--muted)}
+  section.day{margin:0 0 34px;scroll-margin-top:64px}
+  .day-head{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:8px}
+  .day-no{background:var(--teal);color:#fff;font-size:12px;font-weight:800;letter-spacing:.1em;padding:4px 10px;border-radius:6px}
+  .day-head h2{margin:0;font-size:20px;flex:1;min-width:200px}
+  .date{color:var(--muted);font-size:13px;font-weight:700}
+  .day-intro{margin:8px 0 14px;font-size:14.5px;color:#41504a}
+  ul.timeline{list-style:none;margin:0;padding:0}
+  li.stop{display:flex;gap:14px;padding:0 0 22px;position:relative}
+  li.stop:before{content:"";position:absolute;left:57px;top:24px;bottom:-2px;width:2px;background:var(--line)}
+  li.stop:last-child:before{display:none}
+  .time{width:48px;flex:none;font-size:12.5px;font-weight:800;color:var(--teal);text-align:right;padding-top:4px}
+  .dot{width:10px;height:10px;border-radius:50%;background:var(--teal);margin-top:9px;flex:none;box-shadow:0 0 0 3px var(--teal-soft)}
+  .body{flex:1;min-width:0;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+  .body h3{margin:0 0 6px;font-size:15.5px}
+  .body p{margin:6px 0;font-size:14px;color:#3c4844}
+  .meta{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .tag{font-size:11.5px;padding:3px 9px;border-radius:999px;background:#f1f4f2;color:#55625d;border:1px solid var(--line)}
+  .tag.green{background:var(--teal-soft);color:var(--teal);border-color:#c8e2d8}
+  .tag.red{background:#fdeeea;color:var(--coral);border-color:#f4d3ca}
+  .tag.blue{background:#eaf1f8;color:var(--blue);border-color:#d3e1ef}
+  .tag.gold{background:#fbf3e3;color:#8a6220;border-color:#eddfc4}
+  .btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .btn{font-size:12.5px;padding:7px 12px;border-radius:8px;border:1px solid var(--line);background:#fbfdfc;color:#37423e;font-weight:700}
+  .btn.map{background:var(--teal);color:#fff;border-color:var(--teal)}
+  .box{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:13px 15px;font-size:13.8px;color:#3f4a46;margin-top:6px}
+  .box.warn{background:#fffaf0;border-color:#efe0c4;border-left:4px solid var(--gold)}
+  .box b{color:var(--ink)}
+  .insp{background:#f0f7f4;border:1px dashed #bfdcd2;border-radius:12px;padding:12px 15px;font-size:13.5px;margin-top:8px;color:#2f4a43}
+  .insp b{color:var(--teal)}
+  table{width:100%;border-collapse:collapse;background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;font-size:13.5px;margin-top:8px}
+  th{background:#eef4f1;text-align:left;font-size:12px;color:var(--muted);font-weight:700;padding:9px 12px;border-bottom:1px solid var(--line)}
+  td{padding:9px 12px;border-bottom:1px solid var(--line)}
+  tr:last-child td{border-bottom:0}
+  td.cost{text-align:right;white-space:nowrap;font-weight:700;color:var(--teal)}
+  footer{color:var(--muted);font-size:12.5px;margin-top:26px;text-align:center}
+  h2.sec{font-size:18px;margin:30px 0 10px;color:var(--teal);border-left:4px solid var(--teal);padding-left:11px}
+  @media(max-width:560px){
+    li.stop{gap:10px}
+    li.stop:before{left:49px}
+    .time{width:42px;font-size:12px}
+    .body{padding:12px 13px}
+  }
+  @media print{.btns,nav.days{display:none}body{background:#fff}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="hero-inner">
+    <div class="kicker">SINGAPORE · DESIGN RESEARCH</div>
+    <h1>新加坡 5 天 4 晚<br>設計靈感漫遊</h1>
+    <div class="sub">2 位室內設計師同行｜悠閒步調、地鐵為主｜看材質、看光線、看老屋怎麼被重新使用。</div>
+    <div class="facts">
+      <div class="fact">📅 <b>2027/1/4–1/8</b>（一～五）</div>
+      <div class="fact">🏨 <b>Village Hotel Bugis</b>（390 Victoria St）</div>
+      <div class="fact">✈️ 去 <b>CI0753</b> 08:20→13:05｜回 <b>CI0754</b> 14:25→19:05</div>
+      <div class="fact">🚇 全程 <b>MRT＋步行</b></div>
+      <div class="fact">🚫 不吃<b>牛</b></div>
+      <div class="fact">💰 預算 <b>NT$20,000</b>／人（不含機加酒）</div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="notice">
+    <b>行前 5 件事（做完就安心）</b><br>
+    ① <b>CapitaSpring 空中花園</b>免費但要預約，約 2 週前上官網搶時段（平日 08:30–10:30 / 14:30–18:00，17:30 最後入場）。<br>
+    ② <b>環球影城</b>先在官網或 Klook 買日期票（S$83 起），現場買貴又要排。<br>
+    ③ <b>ATLAS 1/7 19:00</b> 已訂位。5pm 後服裝規定：<b>男士長褲＋包鞋、女士不可短褲拖鞋</b>，穿錯會被擋在門口。<br>
+    ④ 搭地鐵直接刷<b>感應式信用卡／Apple Pay</b>（SimplyGo），不用買卡、不用加值。<br>
+    ⑤ 1 月是雨季：天天 26–31°C、午後雷陣雨，帶<b>折傘＋薄外套</b>（室內冷氣很強）。
+  </div>
+
+  <nav class="days">
+    <a href="#d1">Day 1 · 1/4 抵達＋甘榜格南</a>
+    <a href="#d2">Day 2 · 1/5 環球影城</a>
+    <a href="#d3">Day 3 · 1/6 材質與天際線</a>
+    <a href="#d4">Day 4 · 1/7 加東老屋＋ATLAS</a>
+    <a href="#d5">Day 5 · 1/8 星耀樟宜＋回程</a>
+  </nav>
+
+  <!-- ============ DAY 1 ============ -->
+  <section class="day" id="d1">
+    <div class="day-head">
+      <span class="day-no">DAY 1</span>
+      <h2>抵達 · 甘榜格南 · 哈芝巷</h2>
+      <span class="date">1/4（一）</span>
+    </div>
+    <p class="day-intro">今天不趕。落地先安頓，傍晚散步到飯店後面的老城區，用顏色和材質熱身。</p>
+
+    <ul class="timeline">
+      <li class="stop">
+        <div class="time">13:05</div><div class="dot"></div>
+        <div class="body">
+          <h3>抵達樟宜機場</h3>
+          <p>通關＋領行李約 40 分鐘。入境大廳直接叫 <b>Grab</b> 或排計程車到飯店：約 25 分鐘、S$25–30。兩人分攤比地鐵舒服，行李多更划算。</p>
+          <div class="meta"><span class="tag">航廈以機票為準</span><span class="tag blue">Grab 上車點在 T3 地下層</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">14:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>Village Hotel Bugis｜Check-in</h3>
+          <p>390 Victoria St，大廳在 5 樓。放行李、洗把臉。走出去 5 分鐘就是 <b>Bugis MRT</b>（EW12／DT14 雙線交會，之後都靠它）。順口問一下能不能延後退房到 12:00。</p>
+          <div class="meta"><span class="tag green">地點超方便</span><span class="tag">先問延後退房</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Village+Hotel+Bugis+390+Victoria+Street">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">15:45</div><div class="dot"></div>
+        <div class="body">
+          <h3>蘇丹清真寺外觀 · 阿拉伯街織品</h3>
+          <p>步行 8 分鐘。金色圓頂是新加坡最具代表性的伊斯蘭建築。Arab Street 一整排<b>織品、地毯、藤編</b>店，是室內設計師的材料庫；可以問店家能不能拍照、要不要樣布。</p>
+          <div class="insp"><b>設計師看點：</b>騎樓（five-foot way）的連續拱廊如何遮陽；老店面的金屬招牌、木百葉與新店玻璃怎麼共存。</div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Sultan+Mosque+Singapore">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">16:45</div><div class="dot"></div>
+        <div class="body">
+          <h3>哈芝巷 Haji Lane｜小店＋街頭塗鴉</h3>
+          <p>窄巷兩側是 1960 年代老店屋，現在是獨立品牌、選物店、咖啡。走到巷底再折返；<b>17:00 斜光打進巷子</b>最好拍。</p>
+          <div class="meta"><span class="tag green">拍照黃金時段</span><span class="tag">多數店 11:00–20:00</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Haji+Lane+Singapore">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">18:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>晚餐｜Hjh Maimunah（Jalan Pisang）</h3>
+          <p>步行 6 分鐘，就在飯店後方。必比登推薦的馬來菜，取餐式點法。兩人建議：<b>香料炸雞、烤魚、參峇茄子、椰漿飯、蔬菜咖哩</b>，人均 S$15–20。</p>
+          <div class="meta"><span class="tag red">避開 Beef Rendang（牛肉）</span><span class="tag green">在地人排隊店</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Hjh+Maimunah+Jalan+Pisang">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">20:00</div><div class="dot"></div>
+        <div class="body">
+          <h3>回飯店 · 早點睡</h3>
+          <p>明天要早起去環球影城。路上順便買水和優格，房內冰箱先冰好。</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ DAY 2 ============ -->
+  <section class="day" id="d2">
+    <div class="day-head">
+      <span class="day-no">DAY 2</span>
+      <h2>環球影城 · 聖淘沙一日</h2>
+      <span class="date">1/5（二）</span>
+    </div>
+    <p class="day-intro">今天只做一件事：玩。開園就進去，中午躲太陽看表演，傍晚玩到關門。</p>
+
+    <ul class="timeline">
+      <li class="stop">
+        <div class="time">08:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>早餐｜飯店或亞坤 Bugis</h3>
+          <p>飯店早餐吃飽最省事；想吃在地就去 <b>亞坤</b>（Bugis Junction 附近）：咖椰吐司＋半熟蛋＋拉茶，S$6–8。</p>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">09:20</div><div class="dot"></div>
+        <div class="body">
+          <h3>MRT → 港灣站 → 聖淘沙</h3>
+          <p>Bugis →（EW 線）→ Outram Park →（NE 線）→ HarbourFront，約 25 分鐘、S$2。上 L3 搭 <b>Sentosa Express</b> 到 Resorts World，車資 S$4（含入島）。</p>
+          <div class="meta"><span class="tag blue">刷信用卡即可</span><span class="tag">全程約 35 分鐘</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Singapore">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">10:00</div><div class="dot"></div>
+        <div class="body">
+          <h3>環球影城｜開園衝熱門設施</h3>
+          <p>門票 S$83 起（平／旺季差幾塊）。動線建議：進園先衝 <b>變形金剛、木乃伊、侏羅紀</b>，中午最熱時看 <b>水世界</b> 表演（有冷氣感），下午玩 <b>Minion Land</b> 與好萊塢區拍照。</p>
+          <p>園區餐飲貴又普通：建議 12:30 吃園內簡餐（漢堡／炸雞，避開牛肉），或出園到 <b>RWS 美食街</b> 吃再蓋章回來。</p>
+          <div class="meta"><span class="tag gold">整天行程</span><span class="tag red">園內也有牛肉漢堡，看清楚再點</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">12:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>午餐｜園區或 RWS 美食街</h3>
+          <p>預算 S$15–25／人。想吃得舒服一點：RWS 的 <b>Malaysian Food Street</b>（室內、有冷氣），檳城炒粿條、海南雞飯都不錯。</p>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">17:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>出園 · 聖淘沙海灘散步（可選）</h3>
+          <p>還有力氣就搭 Beach Shuttle 到 <b>Siloso Beach</b> 看夕陽；累了直接回市區，不用硬撐。</p>
+          <div class="meta"><span class="tag">彈性</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">19:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>晚餐｜VivoCity 或回 Bugis</h3>
+          <p>VivoCity 二樓 <b>Food Republic</b> 選擇多、有冷氣，人均 S$10–15；回 Bugis 就去 <b>Bugis Junction</b> 樓下美食街。吃完早點休息，明天走一整天。</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="box warn"><b>今天的花費：</b>門票 S$83＋交通 S$8＋餐 S$40 ≈ <b>S$131／人</b>。建議前一天在台灣先買好票，省排隊時間。</div>
+  </section>
+
+  <!-- ============ DAY 3 ============ -->
+  <section class="day" id="d3">
+    <div class="day-head">
+      <span class="day-no">DAY 3</span>
+      <h2>材質 · 老屋 · 天際線</h2>
+      <span class="date">1/6（三）</span>
+    </div>
+    <p class="day-intro">本趟最「設計師」的一天：上午逛家具建材大樓，中午在老社區吃飯，下午上 51 樓看城市，晚上看樹發光。</p>
+
+    <ul class="timeline">
+      <li class="stop">
+        <div class="time">09:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>MRT → Outram Park · Tan Boon Liat Building</h3>
+          <p>Bugis →（EW）→ Outram Park，約 12 分鐘。出站走 8 分鐘到 <b>315 Outram Road</b>。這棟 1970 年代工業大樓現在是新加坡家具與燈具的聚落，十幾層樓逛不完。</p>
+          <div class="meta"><span class="tag gold">設計師重點</span><span class="tag">多數店 10:00–18:30</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Tan+Boon+Liat+Building+315+Outram+Road">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">10:00</div><div class="dot"></div>
+        <div class="body">
+          <h3>逛展間：家具、燈具、石材</h3>
+          <p>推薦動線（由上往下逛比較省力）：<br>
+          ① <b>Space Furniture</b>（B&amp;B Italia、Cassina 等級）② <b>Journey East</b>（復古與實木）③ <b>Rooma</b>（藤編、熱帶風）④ 燈具樓層看 <b>Flos／Artemide</b> 經銷商。</p>
+          <p>想看石材與面材，問店家能不能介紹附近的 <b>stone yard</b>；設計師身分直接說，多半會多聊兩句。</p>
+          <div class="insp"><b>看什麼：</b>同一種木皮在不同色溫下的樣子、藤編與金屬混搭的比例、展間用什麼燈具打亮材質——這些回台灣可以直接用。</div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">12:15</div><div class="dot"></div>
+        <div class="body">
+          <h3>午餐＋散步｜中峇魯 Tiong Bahru</h3>
+          <p>走 12 分鐘或搭一站到 Tiong Bahru。這裡是 1930 年代<b>裝飾藝術（Art Deco）</b>公共住宅區，弧形陽台、圓角樓梯、水磨石地坪都是教材。</p>
+          <p>午餐在 <b>Tiong Bahru Market</b> 二樓熟食中心：海南雞飯、魚湯、炒粿條，人均 S$6–10。飯後 <b>Tiong Bahru Bakery</b> 喝咖啡（可頌很強）。</p>
+          <div class="meta"><span class="tag green">在地熟食中心</span><span class="tag">現金／PayNow</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Tiong+Bahru+Market+Singapore">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">14:45</div><div class="dot"></div>
+        <div class="body">
+          <h3>CapitaSpring 空中花園（51F）</h3>
+          <p>MRT 到 Raffles Place，走 5 分鐘到 <b>88 Market Street</b>。免費入場，但<b>要先上官網預約</b>；平日 14:30–18:00 開放、17:30 最後入場。</p>
+          <p>17–20 樓是熱帶植栽的「綠洲」，51 樓是 360 度觀景台。黃昏時段最值得，看城市從白天轉燈火。</p>
+          <div class="meta"><span class="tag red">必須事先預約</span><span class="tag gold">免費</span><span class="tag green">黃昏最美</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=CapitaSpring+88+Market+Street">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">16:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>魚尾獅 → 濱海灣散步</h3>
+          <p>沿著新加坡河走到 <b>Merlion Park</b>（15 分鐘），拍完往 <b>Esplanade</b> 方向走，看榴槤造型的遮陽結構。沿岸都是好拍的建築立面。</p>
+          <div class="meta"><span class="tag">步行 20 分鐘</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">17:45</div><div class="dot"></div>
+        <div class="body">
+          <h3>晚餐｜Lau Pa Sat 沙嗲街</h3>
+          <p>走到老巴剎（1850 年代市場改建的維多利亞鑄鐵建築，本身就是教材）。晚上 19:00 後外面封街成 <b>沙嗲街</b>：點雞肉、蝦、魷魚沙嗲，配福建麵、甘蔗汁，人均 S$15–20。</p>
+          <div class="meta"><span class="tag red">沙嗲多為雞／羊，指定雞肉</span><span class="tag gold">18:30 後開攤</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Lau+Pa+Sat+Satay+Street">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">19:45</div><div class="dot"></div>
+        <div class="body">
+          <h3>濱海灣花園｜Supertree 燈光秀</h3>
+          <p>走 15 分鐘或搭一站到 Gardens by the Bay。<b>19:45 與 20:45 各一場</b>、免費，躺在 Supertree 下看最好。想進冷室（花穹＋雲霧林）需門票約 S$48，今天時間不夠，建議<b>留到下次</b>或在 Day 5 早上看情況。</p>
+          <div class="meta"><span class="tag green">免費燈光秀</span><span class="tag blue">21:00 前搭 MRT 回飯店</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Supertree+Grove+Gardens+by+the+Bay">🗺 地圖</a></div>
+        </div>
+      </li>
+    </ul>
+
+    <div class="box"><b>今天的節奏：</b>上午站著逛展間會累，中午有坐下來吃飯；下午大多是坐車＋散步。若時間卡住，<b>砍掉魚尾獅那段</b>，直接去 CapitaSpring，不要趕。</div>
+  </section>
+
+  <!-- ============ DAY 4 ============ -->
+  <section class="day" id="d4">
+    <div class="day-head">
+      <span class="day-no">DAY 4</span>
+      <h2>加東老屋 · ATLAS 之夜</h2>
+      <span class="date">1/7（四）</span>
+    </div>
+    <p class="day-intro">上午去看娘惹店屋的顏色與磁磚，下午回飯店休息、換衣服，晚上 19:00 的 ATLAS 是這趟的重頭戲。</p>
+
+    <ul class="timeline">
+      <li class="stop">
+        <div class="time">09:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>MRT → Paya Lebar · 如切／加東</h3>
+          <p>Bugis →（EW）→ Paya Lebar，約 10 分鐘。出站走 10 分鐘進 <b>Joo Chiat</b>。這裡是新加坡保存最完整的娘惹（Peranakan）店屋區。</p>
+          <div class="meta"><span class="tag blue">EW 線直達</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Joo+Chiat+Road+Singapore">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">10:00</div><div class="dot"></div>
+        <div class="body">
+          <h3>坤成路 Koon Seng Road｜彩色店屋</h3>
+          <p>整排糖果色的娘惹店屋，是新加坡最上鏡的一條街。<b>磁磚、木百葉、彩繪玻璃、花磚踢腳</b>——每一戶都是立面設計的範本。早上光線從側面來，拍立面最清楚。</p>
+          <div class="insp"><b>設計師看點：</b>窄面寬（約 6 米）如何做出通風與採光；前廊、天井、後院的三段式空間序列。</div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Koon+Seng+Road+Peranakan+Houses">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">11:00</div><div class="dot"></div>
+        <div class="body">
+          <h3>Rumah Bebe｜娘惹珠繡與磁磚</h3>
+          <p>如切路上老屋改建的娘惹文化館兼商店，可以看到<b>珠繡鞋、蠟染、老磁磚</b>。逛 30–40 分鐘，門票約 S$6。</p>
+          <div class="meta"><span class="tag">可拍照</span><span class="tag gold">磁磚控必看</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Rumah+Bebe+Joo+Chiat">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">12:15</div><div class="dot"></div>
+        <div class="body">
+          <h3>午餐｜金珠肉粽 Kim Choo 或 如切咖啡店</h3>
+          <p>Kim Choo 的娘惹粽是招牌（含豬肉，不吃牛沒問題）；想吃正餐就到附近咖啡店點 <b>叻沙、咖哩雞配麵包</b>。人均 S$8–15。</p>
+          <div class="meta"><span class="tag green">娘惹風味</span><span class="tag red">叻沙湯底有血蛤，不吃可請店家不加</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">13:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>回飯店休息 · 換裝</h3>
+          <p>MRT 回 Bugis 約 15 分鐘。睡個午覺、洗澡。<b>18:30 前換好衣服</b>：男士長褲＋包鞋（不能球鞋拖鞋），女士不穿短褲、不穿拖鞋；smart casual 即可，不用到正式西裝。</p>
+          <div class="meta"><span class="tag red">服裝規定 17:00 起生效</span><span class="tag gold">今晚重點</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">18:50</div><div class="dot"></div>
+        <div class="body">
+          <h3>步行 → ATLAS（Parkview Square）</h3>
+          <p>飯店走過去 <b>8–10 分鐘</b>（600 North Bridge Road）。這棟大樓本身就是 Art Deco 致敬之作：青銅立面、金色大廳、挑高酒塔。抵達後先在一樓大廳拍照，再上樓。</p>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=ATLAS+Bar+Parkview+Square+600+North+Bridge+Road">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">19:00</div><div class="dot"></div>
+        <div class="body">
+          <h3>ATLAS｜已訂位</h3>
+          <p>金氏世界紀錄的酒塔收藏（1,000 多款琴酒）。點法建議：<b>各點一杯招牌琴酒調酒</b>（S$25–30），加一份小食分享；兩杯＋小食約 S$70–90。<b>不要空腹喝</b>，先在飯店吃點東西或點一份主餐。</p>
+          <p>著裝正式一點沒關係，但別穿短褲拖鞋——門口真的會檢查。</p>
+          <div class="meta"><span class="tag green">19:00 訂位</span><span class="tag">建議 21:00 前結束</span><span class="tag gold">建築本身就是景點</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">21:15</div><div class="dot"></div>
+        <div class="body">
+          <h3>散步回飯店</h3>
+          <p>沿 North Bridge Road 走回去，順路看夜色裡的 Bugis 一帶。今晚早點睡，明天中午的飛機。</p>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ============ DAY 5 ============ -->
+  <section class="day" id="d5">
+    <div class="day-head">
+      <span class="day-no">DAY 5</span>
+      <h2>星耀樟宜 · 回程</h2>
+      <span class="date">1/8（五）</span>
+    </div>
+    <p class="day-intro">不排市區景點。退房後直接去機場，把星耀樟宜當最後一個建築作品看。</p>
+
+    <ul class="timeline">
+      <li class="stop">
+        <div class="time">08:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>早餐 · 收行李</h3>
+          <p>飯店早餐或附近咖啡店。把液體、醬料放托運；行動電源一定要隨身。</p>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">09:45</div><div class="dot"></div>
+        <div class="body">
+          <h3>Check-out → 樟宜機場</h3>
+          <p>叫 Grab 到 <b>Jewel Changi</b>，約 20 分鐘、S$20–25。或 MRT：Bugis →（EW）→ Tanah Merah →（CG）→ Changi Airport，約 40 分鐘、S$2，行李多的話叫車划算。</p>
+          <div class="meta"><span class="tag blue">MRT 直達 T3</span><span class="tag">叫車約 20 分鐘</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">10:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>星耀樟宜 Jewel｜雨漩渦＋森林谷</h3>
+          <p>Moshe Safdie 設計的玻璃穹頂，室內瀑布 <b>Rain Vortex</b> 高 40 公尺，從 B2 往上看最有感。森林谷步道免費；頂樓花園需門票（時間不夠就跳過）。</p>
+          <p>旁邊 <b>Shiseido Forest Valley</b> 的植栽配置、光線穿透玻璃的方式，是這趟最後一個免費教材。</p>
+          <div class="meta"><span class="tag green">免費看瀑布</span><span class="tag gold">拍照 20–30 分鐘</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Jewel+Changi+Rain+Vortex">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">11:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>午餐 · 報到</h3>
+          <p>Jewel 或 T3 美食街吃簡單一餐（S$10–15），12:10 前到櫃檯報到。國際航班建議 2.5–3 小時前到；14:25 起飛，時間剛好。</p>
+          <div class="meta"><span class="tag red">12:10 前完成報到</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">14:25</div><div class="dot"></div>
+        <div class="body">
+          <h3>CI0754 起飛 → 19:05 抵達桃園</h3>
+          <p>回程。記帳頁記得把今天的交通、餐費補上。</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="box warn"><b>退稅：</b>新加坡消費滿 S$100 可退 8%（GST）部分，機場用 <b>eTRS</b> 自助機辦理；單筆消費記得跟店家要退稅單。退稅要在<b>托運行李前</b>辦，別把戰利品先托運。</div>
+  </section>
+
+  <!-- ============ 預算 ============ -->
+  <h2 class="sec">預算試算（每人．不含機加酒）</h2>
+  <table>
+    <tr><th>項目</th><th>說明</th><th class="cost">S$</th></tr>
+    <tr><td>環球影城</td><td>一日票 S$83 起</td><td class="cost">83</td></tr>
+    <tr><td>ATLAS</td><td>兩杯調酒＋小食（2 人分攤）</td><td class="cost">45–60</td></tr>
+    <tr><td>CapitaSpring</td><td>免費（需預約）</td><td class="cost">0</td></tr>
+    <tr><td>Supertree 燈光秀</td><td>免費</td><td class="cost">0</td></tr>
+    <tr><td>Rumah Bebe</td><td>門票</td><td class="cost">6</td></tr>
+    <tr><td>交通</td><td>MRT＋Sentosa Express＋2 趟 Grab（分攤）</td><td class="cost">35–45</td></tr>
+    <tr><td>餐飲</td><td>5 天，多為熟食中心／咖啡店</td><td class="cost">180–220</td></tr>
+    <tr><td>咖啡／小吃／門票雜支</td><td>彈性</td><td class="cost">40–60</td></tr>
+    <tr><td><b>合計</b></td><td>約 NT$8,300–11,300（匯率 23.8）</td><td class="cost"><b>350–475</b></td></tr>
+  </table>
+  <div class="box"><b>結論：</b>預算 NT$20,000／人非常充裕，還能再加：<b>Gardens by the Bay 冷室 S$48</b>、<b>國家美術館 S$20</b>、<b>一餐娘惹餐廳（Candlenut 約 S$80）</b>、或 <b>買家具樣布／小件家飾</b>。想花就花，不會爆。</div>
+
+  <h2 class="sec">設計師加碼清單（体力有剩再去）</h2>
+  <table>
+    <tr><th>地點</th><th>看點</th><th class="cost">門票</th></tr>
+    <tr><td>國家美術館 National Gallery</td><td>前最高法院＋市政廳改建，石材與採光手法</td><td class="cost">S$20</td></tr>
+    <tr><td>Gardens by the Bay 冷室</td><td>雲霧林 35 公尺室內瀑布、花穹溫控</td><td class="cost">S$48</td></tr>
+    <tr><td>Parkroyal on Pickering</td><td>WOHA 綠建築，梯田式空中花園（外觀免費）</td><td class="cost">0</td></tr>
+    <tr><td>Oasia Hotel Downtown</td><td>紅色攀藤立面，市區最紅的綠牆</td><td class="cost">0</td></tr>
+    <tr><td>Design Orchard</td><td>本地設計品牌選物（Orchard Rd）</td><td class="cost">0</td></tr>
+    <tr><td>Hock Siong &amp; Co.</td><td>老家具／老物件倉庫，挖寶型</td><td class="cost">0</td></tr>
+  </table>
+
+  <h2 class="sec">不吃牛 · 點餐速查</h2>
+  <div class="box">
+    <b>安全牌：</b>海南雞飯、叻沙（可請店家不加血蛤）、咖哩雞、魚湯、炒粿條（指明「不要臘腸、不要牛肉」）、沙嗲（指定雞肉）、椰漿飯配炸雞、辣椒螃蟹、麥片蝦、肉骨茶（多為豬肉）。<br>
+    <b>地雷：</b>Beef Rendang、牛肉河粉、沙嗲羊肉（可避）、漢堡店的牛肉排、部分馬來菜的「Rendang」預設就是牛肉。<br>
+    <b>一句話通關：</b>「No beef, please. I'm allergic.」— 講 allergy 比講不喜歡有效得多。
+  </div>
+
+  <h2 class="sec">實用資訊</h2>
+  <div class="box">
+    <b>支付：</b>信用卡幾乎通用（含熟食中心部分攤位可用 PayNow）；小販中心仍建議帶 <b>S$50–100 現金</b>。<br>
+    <b>網路：</b>台灣門號漫遊或買 eSIM（5 天約 NT$200–300），比機場買實體卡便宜。<br>
+    <b>天氣：</b>1 月雨季，26–31°C，午後雷陣雨通常 1 小時內結束；室內冷氣強，帶薄外套。<br>
+    <b>插座：</b>G 型三孔（跟台灣不同），帶萬用轉接頭。<br>
+    <b>地鐵禮儀：</b>車廂內禁止飲食（含喝水），罰款很重。<br>
+    <b>安全：</b>治安很好，但夜間濱海灣人多，包包拉鍊拉好即可。
+  </div>
+
+  <footer>
+    <p>製作：叮噹 🔔 ｜ 2026.10 ｜ 給柔姐的新加坡 5 天 4 晚設計靈感行程</p>
+    <p>票價與營業時間為 2026 年查詢結果，出發前用官方網站再確認一次。</p>
+  </footer>
+
+</div>
+</body>
+</html>
