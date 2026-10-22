@@ -62,6 +62,16 @@
   td{padding:9px 12px;border-bottom:1px solid var(--line)}
   tr:last-child td{border-bottom:0}
   td.cost{text-align:right;white-space:nowrap;font-weight:700;color:var(--teal)}
+  .pack{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin:0 0 14px}
+  .pack h4{margin:0 0 8px;font-size:14.5px;color:var(--ink)}
+  .ck{display:flex;align-items:flex-start;gap:10px;padding:7px 2px;border-bottom:1px dashed #eef3f0;font-size:14px;color:#2f3a36;cursor:pointer}
+  .ck:last-of-type{border-bottom:0}
+  .ck input{appearance:none;-webkit-appearance:none;width:19px;height:19px;flex:0 0 19px;border:1.6px solid #c3d4cc;border-radius:5px;margin:1px 0 0;position:relative;cursor:pointer;background:#fff}
+  .ck input:checked{background:var(--teal);border-color:var(--teal)}
+  .ck input:checked::after{content:"✓";position:absolute;inset:0;color:#fff;font-size:12px;line-height:16px;text-align:center;font-weight:800}
+  .ck input:checked + span{color:#9fb0a9;text-decoration:line-through}
+  .pack .cnt{font-size:12px;color:var(--muted);margin-top:8px}
+
   footer{color:var(--muted);font-size:12.5px;margin-top:26px;text-align:center}
   h2.sec{font-size:18px;margin:30px 0 10px;color:var(--teal);border-left:4px solid var(--teal);padding-left:11px}
   @media(max-width:560px){
@@ -81,8 +91,10 @@
     <h1>新加坡 5 天 4 晚<br>設計靈感漫遊</h1>
     <div class="sub">2 位室內設計師同行｜悠閒步調、地鐵為主｜看材質、看光線、看老屋怎麼被重新使用。</div>
     <div class="facts">
-      <div class="fact">📅 <b>2027/1/4–1/8</b>（一～五）</div>
+      <div class="fact">📅 <b>2027/1/4–1/8</b>（一～五）｜1/3 住桃園</div>
       <div class="fact">🏨 <b>Village Hotel Bugis</b>（390 Victoria St）</div>
+      <div class="fact">🛏 1/3 <b>桃園機場假日酒店</b></div>
+      <div class="fact">🎢 環球影城 <b>1/6</b></div>
       <div class="fact">✈️ 去 <b>CI0753</b> 08:20→13:05｜回 <b>CI0754</b> 14:25→19:05</div>
       <div class="fact">🚇 全程 <b>MRT＋步行</b></div>
       <div class="fact">🚫 不吃<b>牛</b></div>
@@ -96,19 +108,65 @@
   <div class="notice">
     <b>行前 5 件事（做完就安心）</b><br>
     ① <b>CapitaSpring 空中花園</b>免費但要預約，約 2 週前上官網搶時段（平日 08:30–10:30 / 14:30–18:00，17:30 最後入場）。<br>
-    ② <b>環球影城</b>先在官網或 Klook 買日期票（S$83 起），現場買貴又要排。<br>
+    ② <b>環球影城（1/6）</b>先在官網或 Klook 買<b>日期票</b>（S$83 起），現場買貴又要排。<br>
     ③ <b>ATLAS 1/7 19:00</b> 已訂位。5pm 後服裝規定：<b>男士長褲＋包鞋、女士不可短褲拖鞋</b>，穿錯會被擋在門口。<br>
     ④ 搭地鐵直接刷<b>感應式信用卡／Apple Pay</b>（SimplyGo），不用買卡、不用加值。<br>
     ⑤ 1 月是雨季：天天 26–31°C、午後雷陣雨，帶<b>折傘＋薄外套</b>（室內冷氣很強）。
   </div>
 
   <nav class="days">
+    <a href="#d0">Day 0 · 1/3 桃園過夜</a>
     <a href="#d1">Day 1 · 1/4 抵達＋甘榜格南</a>
-    <a href="#d2">Day 2 · 1/5 環球影城</a>
-    <a href="#d3">Day 3 · 1/6 材質與天際線</a>
+    <a href="#d2">Day 2 · 1/5 材質與天際線</a>
+    <a href="#d3">Day 3 · 1/6 環球影城</a>
     <a href="#d4">Day 4 · 1/7 加東老屋＋ATLAS</a>
     <a href="#d5">Day 5 · 1/8 星耀樟宜＋回程</a>
+    <a href="#pack">PACK · 打包清單</a>
   </nav>
+
+  <!-- ============ DAY 0 ============ -->
+  <section class="day" id="d0">
+    <div class="day-head">
+      <span class="day-no">DAY 0</span>
+      <h2>台南 → 桃園 · 機場前一晚</h2>
+      <span class="date">1/3（日）</span>
+    </div>
+    <p class="day-intro">隔天 08:20 的飛機，先上桃園住一晚，早上不用半夜從台南出發。</p>
+
+    <ul class="timeline">
+      <li class="stop">
+        <div class="time">15:00</div><div class="dot"></div>
+        <div class="body">
+          <h3>台南高鐵站 → 桃園</h3>
+          <p>抓下午 15:00 前後的班次（實際依訂票班次），車程約 1 小時 37 分。行李別放太滿，隔天還要再搬一次。</p>
+          <div class="meta"><span class="tag">高鐵 1h37</span><span class="tag blue">對號座</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">16:45</div><div class="dot"></div>
+        <div class="body">
+          <h3>桃園高鐵 → 桃園機場假日酒店</h3>
+          <p>計程車約 20–25 分鐘；飯店若有機場接駁，<b>訂房時就先問接駁時刻</b>，並確認隔天清晨 05:40 有沒有車。</p>
+          <div class="meta"><span class="tag red">先確認接駁時間</span><span class="tag green">走路可到機場（約 15 分）</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">17:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>Check-in · 附近吃晚餐</h3>
+          <p>放好行李，附近簡單吃。順便把護照、機票、環球影城電子票、ATLAS 訂位確認都放進同一個隨身包。</p>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">21:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>早點睡 · 設 05:20 鬧鐘</h3>
+          <p>05:40 出發到機場，06:00 前到櫃檯，08:20 起飛時間就很寬。行李先秤一次，液體放托運。</p>
+          <div class="meta"><span class="tag">CI0753 08:20</span><span class="tag blue">06:00 前到 T1／T2</span></div>
+        </div>
+      </li>
+    </ul>
+  </section>
 
   <!-- ============ DAY 1 ============ -->
   <section class="day" id="d1">
@@ -168,7 +226,7 @@
         <div class="time">20:00</div><div class="dot"></div>
         <div class="body">
           <h3>回飯店 · 早點睡</h3>
-          <p>明天要早起去環球影城。路上順便買水和優格，房內冰箱先冰好。</p>
+          <p>明天走市區設計路線，不用太早起。路上順便買水和優格，房內冰箱先冰好。</p>
         </div>
       </li>
     </ul>
@@ -178,70 +236,8 @@
   <section class="day" id="d2">
     <div class="day-head">
       <span class="day-no">DAY 2</span>
-      <h2>環球影城 · 聖淘沙一日</h2>
-      <span class="date">1/5（二）</span>
-    </div>
-    <p class="day-intro">今天只做一件事：玩。開園就進去，中午躲太陽看表演，傍晚玩到關門。</p>
-
-    <ul class="timeline">
-      <li class="stop">
-        <div class="time">08:30</div><div class="dot"></div>
-        <div class="body">
-          <h3>早餐｜飯店或亞坤 Bugis</h3>
-          <p>飯店早餐吃飽最省事；想吃在地就去 <b>亞坤</b>（Bugis Junction 附近）：咖椰吐司＋半熟蛋＋拉茶，S$6–8。</p>
-        </div>
-      </li>
-      <li class="stop">
-        <div class="time">09:20</div><div class="dot"></div>
-        <div class="body">
-          <h3>MRT → 港灣站 → 聖淘沙</h3>
-          <p>Bugis →（EW 線）→ Outram Park →（NE 線）→ HarbourFront，約 25 分鐘、S$2。上 L3 搭 <b>Sentosa Express</b> 到 Resorts World，車資 S$4（含入島）。</p>
-          <div class="meta"><span class="tag blue">刷信用卡即可</span><span class="tag">全程約 35 分鐘</span></div>
-          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Singapore">🗺 地圖</a></div>
-        </div>
-      </li>
-      <li class="stop">
-        <div class="time">10:00</div><div class="dot"></div>
-        <div class="body">
-          <h3>環球影城｜開園衝熱門設施</h3>
-          <p>門票 S$83 起（平／旺季差幾塊）。動線建議：進園先衝 <b>變形金剛、木乃伊、侏羅紀</b>，中午最熱時看 <b>水世界</b> 表演（有冷氣感），下午玩 <b>Minion Land</b> 與好萊塢區拍照。</p>
-          <p>園區餐飲貴又普通：建議 12:30 吃園內簡餐（漢堡／炸雞，避開牛肉），或出園到 <b>RWS 美食街</b> 吃再蓋章回來。</p>
-          <div class="meta"><span class="tag gold">整天行程</span><span class="tag red">園內也有牛肉漢堡，看清楚再點</span></div>
-        </div>
-      </li>
-      <li class="stop">
-        <div class="time">12:30</div><div class="dot"></div>
-        <div class="body">
-          <h3>午餐｜園區或 RWS 美食街</h3>
-          <p>預算 S$15–25／人。想吃得舒服一點：RWS 的 <b>Malaysian Food Street</b>（室內、有冷氣），檳城炒粿條、海南雞飯都不錯。</p>
-        </div>
-      </li>
-      <li class="stop">
-        <div class="time">17:30</div><div class="dot"></div>
-        <div class="body">
-          <h3>出園 · 聖淘沙海灘散步（可選）</h3>
-          <p>還有力氣就搭 Beach Shuttle 到 <b>Siloso Beach</b> 看夕陽；累了直接回市區，不用硬撐。</p>
-          <div class="meta"><span class="tag">彈性</span></div>
-        </div>
-      </li>
-      <li class="stop">
-        <div class="time">19:30</div><div class="dot"></div>
-        <div class="body">
-          <h3>晚餐｜VivoCity 或回 Bugis</h3>
-          <p>VivoCity 二樓 <b>Food Republic</b> 選擇多、有冷氣，人均 S$10–15；回 Bugis 就去 <b>Bugis Junction</b> 樓下美食街。吃完早點休息，明天走一整天。</p>
-        </div>
-      </li>
-    </ul>
-
-    <div class="box warn"><b>今天的花費：</b>門票 S$83＋交通 S$8＋餐 S$40 ≈ <b>S$131／人</b>。建議前一天在台灣先買好票，省排隊時間。</div>
-  </section>
-
-  <!-- ============ DAY 3 ============ -->
-  <section class="day" id="d3">
-    <div class="day-head">
-      <span class="day-no">DAY 3</span>
       <h2>材質 · 老屋 · 天際線</h2>
-      <span class="date">1/6（三）</span>
+      <span class="date">1/5（二）</span>
     </div>
     <p class="day-intro">本趟最「設計師」的一天：上午逛家具建材大樓，中午在老社區吃飯，下午上 51 樓看城市，晚上看樹發光。</p>
 
@@ -313,7 +309,69 @@
       </li>
     </ul>
 
-    <div class="box"><b>今天的節奏：</b>上午站著逛展間會累，中午有坐下來吃飯；下午大多是坐車＋散步。若時間卡住，<b>砍掉魚尾獅那段</b>，直接去 CapitaSpring，不要趕。</div>
+    <div class="box"><b>今天的節奏：</b>上午站著逛展間會累，中午有坐下來吃飯；下午大多是坐車＋散步。若時間卡住，<b>砍掉魚尾獅那段</b>，直接去 CapitaSpring，不要趕。今晚早點收，<b>明天環球影城要開園就衝</b>。</div>
+  </section>
+
+  <!-- ============ DAY 3 ============ -->
+  <section class="day" id="d3">
+    <div class="day-head">
+      <span class="day-no">DAY 3</span>
+      <h2>環球影城 · 聖淘沙一日</h2>
+      <span class="date">1/6（三）</span>
+    </div>
+    <p class="day-intro">今天只做一件事：玩。開園就進去，中午躲太陽看表演，傍晚玩到關門。</p>
+
+    <ul class="timeline">
+      <li class="stop">
+        <div class="time">08:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>早餐｜飯店或亞坤 Bugis</h3>
+          <p>飯店早餐吃飽最省事；想吃在地就去 <b>亞坤</b>（Bugis Junction 附近）：咖椰吐司＋半熟蛋＋拉茶，S$6–8。</p>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">09:20</div><div class="dot"></div>
+        <div class="body">
+          <h3>MRT → 港灣站 → 聖淘沙</h3>
+          <p>Bugis →（EW 線）→ Outram Park →（NE 線）→ HarbourFront，約 25 分鐘、S$2。上 L3 搭 <b>Sentosa Express</b> 到 Resorts World，車資 S$4（含入島）。</p>
+          <div class="meta"><span class="tag blue">刷信用卡即可</span><span class="tag">全程約 35 分鐘</span></div>
+          <div class="btns"><a class="btn map" href="https://www.google.com/maps/search/?api=1&query=Universal+Studios+Singapore">🗺 地圖</a></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">10:00</div><div class="dot"></div>
+        <div class="body">
+          <h3>環球影城｜開園衝熱門設施</h3>
+          <p>門票 S$83 起（平／旺季差幾塊）。動線建議：進園先衝 <b>變形金剛、木乃伊、侏羅紀</b>，中午最熱時看 <b>水世界</b> 表演（有冷氣感），下午玩 <b>Minion Land</b> 與好萊塢區拍照。</p>
+          <p>園區餐飲貴又普通：建議 12:30 吃園內簡餐（漢堡／炸雞，避開牛肉），或出園到 <b>RWS 美食街</b> 吃再蓋章回來。</p>
+          <div class="meta"><span class="tag gold">整天行程</span><span class="tag red">園內也有牛肉漢堡，看清楚再點</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">12:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>午餐｜園區或 RWS 美食街</h3>
+          <p>預算 S$15–25／人。想吃得舒服一點：RWS 的 <b>Malaysian Food Street</b>（室內、有冷氣），檳城炒粿條、海南雞飯都不錯。</p>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">17:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>出園 · 聖淘沙海灘散步（可選）</h3>
+          <p>還有力氣就搭 Beach Shuttle 到 <b>Siloso Beach</b> 看夕陽；累了直接回市區，不用硬撐。</p>
+          <div class="meta"><span class="tag">彈性</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">19:30</div><div class="dot"></div>
+        <div class="body">
+          <h3>晚餐｜VivoCity 或回 Bugis</h3>
+          <p>VivoCity 二樓 <b>Food Republic</b> 選擇多、有冷氣，人均 S$10–15；回 Bugis 就去 <b>Bugis Junction</b> 樓下美食街。吃完早點休息，明天走一整天。</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="box warn"><b>今天的花費：</b>門票 S$83＋交通 S$8＋餐 S$40 ≈ <b>S$131／人</b>。建議前一天在台灣先買好票，省排隊時間。</div>
   </section>
 
   <!-- ============ DAY 4 ============ -->
@@ -446,12 +504,74 @@
           <p>回程。記帳頁記得把今天的交通、餐費補上。</p>
         </div>
       </li>
+      <li class="stop">
+        <div class="time">19:50</div><div class="dot"></div>
+        <div class="body">
+          <h3>出關 → 機場捷運 → 桃園高鐵</h3>
+          <p>領行李出關約 30–40 分鐘，機捷到 A18 桃園高鐵站約 30 分鐘（含等車）。</p>
+          <div class="meta"><span class="tag">A12／A13 → A18</span><span class="tag blue">約 30 分</span></div>
+        </div>
+      </li>
+      <li class="stop">
+        <div class="time">20:40</div><div class="dot"></div>
+        <div class="body">
+          <h3>高鐵 桃園 → 台南</h3>
+          <p>抓 20:40–21:00 的班次（依訂票班次），約 1 小時 25 分。上車前先買個東西吃，車上補眠。</p>
+          <div class="meta"><span class="tag">1h25</span><span class="tag green">約 22:10 到台南</span></div>
+        </div>
+      </li>
     </ul>
 
     <div class="box warn"><b>退稅：</b>新加坡消費滿 S$100 可退 8%（GST）部分，機場用 <b>eTRS</b> 自助機辦理；單筆消費記得跟店家要退稅單。退稅要在<b>托運行李前</b>辦，別把戰利品先托運。</div>
   </section>
 
   <!-- ============ 預算 ============ -->
+  <!-- ============ PACK ============ -->
+  <h2 class="sec" id="pack">打包清單</h2>
+  <p class="sec-sub" style="font-size:14px;color:var(--muted);margin:-6px 0 14px">1 月新加坡 26–31°C、午後雷陣雨、室內冷氣很強。點一下就打勾，重整後還記得。</p>
+
+  <div class="pack">
+    <h4>衣物與配件</h4>
+    <label class="ck"><input type="checkbox" data-k="a01"><span>短袖／薄上衣 4–5 件</span></label>
+    <label class="ck"><input type="checkbox" data-k="a02"><span>薄長褲 2 件（ATLAS 需要）</span></label>
+    <label class="ck"><input type="checkbox" data-k="a03"><span>洋裝或好拍的一套（ATLAS 用）</span></label>
+    <label class="ck"><input type="checkbox" data-k="a04"><span>薄外套／針織衫（擋冷氣）</span></label>
+    <label class="ck"><input type="checkbox" data-k="a05"><span>好走的包鞋（ATLAS 不可拖鞋）</span></label>
+    <label class="ck"><input type="checkbox" data-k="a06"><span>涼鞋／拖鞋</span></label>
+    <label class="ck"><input type="checkbox" data-k="a07"><span>泳衣（飯店泳池）</span></label>
+    <label class="ck"><input type="checkbox" data-k="a08"><span>內衣褲・襪子</span></label>
+    <label class="ck"><input type="checkbox" data-k="a09"><span>睡衣</span></label>
+    <label class="ck"><input type="checkbox" data-k="a10"><span>帽子＋太陽眼鏡</span></label>
+    <label class="ck"><input type="checkbox" data-k="a11"><span>折疊傘（午後雷陣雨）</span></label>
+    <div class="cnt"></div>
+  </div>
+
+  <div class="pack">
+    <h4>證件與票券</h4>
+    <label class="ck"><input type="checkbox" data-k="b01"><span>護照（效期 6 個月以上）</span></label>
+    <label class="ck"><input type="checkbox" data-k="b02"><span>SG Arrival Card（出發前 3 天線上填）</span></label>
+    <label class="ck"><input type="checkbox" data-k="b03"><span>機票／訂房確認</span></label>
+    <label class="ck"><input type="checkbox" data-k="b04"><span>環球影城 1/6 電子票</span></label>
+    <label class="ck"><input type="checkbox" data-k="b05"><span>ATLAS 1/7 19:00 訂位確認</span></label>
+    <label class="ck"><input type="checkbox" data-k="b06"><span>CapitaSpring 預約截圖</span></label>
+    <label class="ck"><input type="checkbox" data-k="b07"><span>信用卡（感應式，MRT 直接刷）</span></label>
+    <label class="ck"><input type="checkbox" data-k="b08"><span>新幣現金少許＋Grab 已綁卡</span></label>
+    <div class="cnt"></div>
+  </div>
+
+  <div class="pack">
+    <h4>隨身小物</h4>
+    <label class="ck"><input type="checkbox" data-k="c01"><span>防曬乳</span></label>
+    <label class="ck"><input type="checkbox" data-k="c02"><span>防蚊液</span></label>
+    <label class="ck"><input type="checkbox" data-k="c03"><span>常備藥</span></label>
+    <label class="ck"><input type="checkbox" data-k="c04"><span>水壺</span></label>
+    <label class="ck"><input type="checkbox" data-k="c05"><span>行動電源（只能隨身）</span></label>
+    <label class="ck"><input type="checkbox" data-k="c06"><span>轉接頭（英式三孔 G 型）＋充電線</span></label>
+    <label class="ck"><input type="checkbox" data-k="c07"><span>小背包</span></label>
+    <label class="ck"><input type="checkbox" data-k="c08"><span>面紙／濕紙巾</span></label>
+    <div class="cnt"></div>
+  </div>
+
   <h2 class="sec">預算試算（每人．不含機加酒）</h2>
   <table>
     <tr><th>項目</th><th>說明</th><th class="cost">S$</th></tr>
@@ -501,5 +621,26 @@
   </footer>
 
 </div>
+<script>
+(function(){
+  var KEY='sg_pack_v1', state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')}catch(e){}
+  var boxes=[].slice.call(document.querySelectorAll('.ck input'));
+  function update(){
+    boxes.forEach(function(b){b.checked=!!state[b.dataset.k]});
+    [].slice.call(document.querySelectorAll('.pack')).forEach(function(p){
+      var ins=[].slice.call(p.querySelectorAll('input'));
+      var n=ins.filter(function(i){return i.checked}).length;
+      var c=p.querySelector('.cnt'); if(c)c.textContent='已勾 '+n+' / '+ins.length;
+    });
+  }
+  boxes.forEach(function(b){b.addEventListener('change',function(){
+    state[b.dataset.k]=b.checked;
+    try{localStorage.setItem(KEY,JSON.stringify(state))}catch(e){}
+    update();
+  });});
+  update();
+})();
+</script>
 </body>
 </html>
